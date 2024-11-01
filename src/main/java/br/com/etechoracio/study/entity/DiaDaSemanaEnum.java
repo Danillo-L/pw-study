@@ -1,6 +1,7 @@
 package br.com.etechoracio.study.entity;
 
-public enum DiaSemanaEnum {
+public enum DiaDaSemanaEnum
+{
     SEGUNDA,
     TERCA,
     QUARTA,
