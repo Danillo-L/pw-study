@@ -46,7 +46,7 @@ public class MonitorController {
     }
 
     @DeleteMapping("/{id}")
-    public void escluir(@PathVariable ("id") Long id)
+    public void excluir(@PathVariable ("id") Long id)
     {
         service.excluir(id);
     }
