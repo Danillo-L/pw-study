@@ -28,6 +28,8 @@ public class DisciplinaService {
         return null;
     }
 
+    public Disciplina buscarPorNome(String nome){ return repository.findByNome(nome); }
+
     //Cadastrar disciplina
     public Disciplina cadastrar(Disciplina disciplina)
     {

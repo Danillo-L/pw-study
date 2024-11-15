@@ -29,10 +29,27 @@ public class MonitorService {
         return null;
     }
 
+    public Monitor buscarPorEmaiL(String email)
+    {
+        var existe = repository.findByEmail(email);
+        if(existe != null)
+        {
+            return repository.findByEmail(email);
+        }
+        return null;
+    }
 
     public Monitor cadastrar(Monitor monitor)
     {
-        return repository.save(monitor);
+        var achouWhats = repository.findByWhatsapp(monitor.getWhatsapp());
+        var achouEmail = repository.findByEmail(monitor.getEmail());
+        if(achouWhats == null && achouEmail == null)
+            return repository.save(monitor);
+        else if(achouWhats != null)
+            System.out.println("Whatsapp já cadastrado");
+        else
+            System.out.println("Email já cadastrado");
+        return null;
     }
 
 

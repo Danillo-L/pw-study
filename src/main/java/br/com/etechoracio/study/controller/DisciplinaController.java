@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/disciplina")
+@RequestMapping("/disciplinas")
 @RestController
 public class DisciplinaController {
     @Autowired
@@ -27,6 +27,9 @@ public class DisciplinaController {
     {
         return service.buscarPorId(id);
     }
+
+    @GetMapping("/nome/{nome}")
+    public Disciplina buscarPorNome(@PathVariable("nome") String nome) { return service.buscarPorNome(nome); }
 
     @PostMapping
     public Disciplina cadastrar(@RequestBody  Disciplina disciplina)
